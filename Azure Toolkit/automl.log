@@ -1,0 +1,655 @@
+2020-02-18 18:51:10,564 - WARNING - 295 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
+2020-02-18 18:51:10,651 - INFO - 295 : Starting usage telemetry collection
+2020-02-18 18:51:11,922 - INFO - 295 : Extracting user Data
+2020-02-18 18:51:11,951 - INFO - 295 : User has validation defined, no train rule based validation needed.
+2020-02-18 18:51:12,046 - INFO - 295 : Start creating parent run with DTO:  - name: my-third-experiment
+ - subscription_id: 055108ec-2785-464c-9375-6599cde5996d
+ - region: centralus
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 3
+ - primary_metric: spearman_correlation
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 25.0
+ - y_max: 346.0
+ - num_classes: None
+ - featurization: off
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 6
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'Prophet']
+ - supported_models: ['ElasticNet', 'GradientBoosting', 'DecisionTree', 'KNN', 'LassoLars', 'SGD', 'RandomForest', 'ExtremeRandomTrees', 'LightGBM', 'XGBoostRegressor', 'FastLinearRegressor', 'OnlineGradientDescentRegressor', 'TensorFlowLinearRegressor', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: False
+ - enable_stack_ensembling: False
+ - ensemble_iterations: None
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - label_column_name: None
+ - weight_column_name: None
+ - cost_mode: 0
+ - metric_operation: maximize.
+2020-02-18 18:51:13,025 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400]SDK dependencies versions:{"azureml-widgets": "1.0.72", "azureml-train": "1.0.72", "azureml-train-restclients-hyperdrive": "1.0.72", "azureml-train-core": "1.0.72", "azureml-train-automl": "1.0.72", "azureml-telemetry": "1.0.72", "azureml-sdk": "1.0.72", "azureml-pipeline": "1.0.72", "azureml-pipeline-steps": "1.0.72", "azureml-pipeline-core": "1.0.72", "azureml-opendatasets": "1.0.72.1", "azureml-model-management-sdk": "1.0.1b6.post1", "azureml-interpret": "1.0.72.1", "azureml-explain-model": "1.0.72", "azureml-defaults": "1.0.72", "azureml-dataprep": "1.1.30", "azureml-dataprep-native": "13.1.0", "azureml-core": "1.0.72", "azureml-contrib-notebook": "1.0.72", "azureml-automl-core": "1.0.72.1"}.
+2020-02-18 18:51:13,370 - INFO - 295 : [ParentRunID:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400] Local run using input X and y.
+2020-02-18 18:51:13,391 - INFO - 295 : Parent Run ID: AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400
+2020-02-18 18:51:13,464 - INFO - 295 : [ParentRunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400]Input X datatype is <class 'numpy.ndarray'>, shape is (353, 10), datasize is 28352.
+2020-02-18 18:51:13,529 - INFO - 295 : [ParentRunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400]Input y datatype is <class 'numpy.ndarray'>, shape is (353,), datasize is 2920.
+2020-02-18 18:51:13,650 - INFO - 295 : ActivityStarted, PreProcess
+2020-02-18 18:51:14,380 - INFO - 295 : Pre-processing user data
+2020-02-18 18:51:14,412 - INFO - 295 : The size of raw data is: 31647
+2020-02-18 18:51:14,550 - INFO - 295 : [YCol]RawFeatureStats:{"num_unique_vals": "194", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:14,646 - INFO - 295 : [XColNum:0]RawFeatureStats:{"num_unique_vals": "58", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:14,798 - INFO - 295 : [XColNum:1]RawFeatureStats:{"num_unique_vals": "2", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:14,875 - INFO - 295 : [XColNum:2]RawFeatureStats:{"num_unique_vals": "154", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:14,951 - INFO - 295 : [XColNum:3]RawFeatureStats:{"num_unique_vals": "91", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:15,019 - INFO - 295 : [XColNum:4]RawFeatureStats:{"num_unique_vals": "134", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:15,101 - INFO - 295 : [XColNum:5]RawFeatureStats:{"num_unique_vals": "260", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:15,216 - INFO - 295 : [XColNum:6]RawFeatureStats:{"num_unique_vals": "61", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:15,336 - INFO - 295 : [XColNum:7]RawFeatureStats:{"num_unique_vals": "58", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:15,432 - INFO - 295 : [XColNum:8]RawFeatureStats:{"num_unique_vals": "168", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:15,557 - INFO - 295 : [XColNum:9]RawFeatureStats:{"num_unique_vals": "56", "total_number_vals": "353", "total_number_vals_including_nans": "353", "num_na": "0", "column_type": "\"floating\"", "lengths": "null", "num_unique_lens": "0", "average_entry_length": "0", "average_number_spaces": "0", "cardinality_ratio": "0", "is_datetime": "false", "is_all_nan": "false"}
+2020-02-18 18:51:15,679 - INFO - 295 : X datatype is <class 'numpy.ndarray'>, shape is (353, 10), datasize is 28352.
+2020-02-18 18:51:15,862 - INFO - 295 : y datatype is <class 'numpy.ndarray'>, shape is (353,), datasize is 2920.
+2020-02-18 18:51:15,954 - INFO - 295 : No preprocessing of data to be done here
+2020-02-18 18:51:16,066 - INFO - 295 : Creating cross validations
+2020-02-18 18:51:16,448 - INFO - 295 : Found cross validation type: KFoldCrossValidationSplit
+2020-02-18 18:51:16,465 - INFO - 295 : Completed creating cross-validation folds and featurizing them
+2020-02-18 18:51:16,582 - INFO - 295 : The size of transformed data is: 32749
+2020-02-18 18:51:16,665 - INFO - 295 : ActivityCompleted: Activity=PreProcess, HowEnded=Success, Duration=3015.24 [ms]
+2020-02-18 18:51:17,284 - INFO - 295 : Logging dataset information for AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400
+2020-02-18 18:51:17,309 - INFO - 295 : [ParentRunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400]X datatype is <class 'numpy.ndarray'>, shape is (353, 10), datasize is 28352.
+2020-02-18 18:51:17,405 - INFO - 295 : [ParentRunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400]y datatype is <class 'numpy.ndarray'>, shape is (353,), datasize is 2920.
+2020-02-18 18:51:18,697 - INFO - 295 : Initialized ClientDatasets object from transformed_data_context.. deleting transformed_data_context.
+2020-02-18 18:51:20,288 - INFO - 295 : Start local loop.
+2020-02-18 18:51:20,324 - INFO - 295 : Start iteration: 0
+2020-02-18 18:51:20,397 - INFO - 295 : ActivityStarted, FitIteration
+2020-02-18 18:51:20,494 - INFO - 295 : ActivityStarted, GetPipeline
+2020-02-18 18:51:20,609 - INFO - 295 : Querying Jasmine for next task.
+2020-02-18 18:51:21,389 - INFO - 295 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=894.48 [ms]
+2020-02-18 18:51:21,407 - INFO - 295 : Received pipeline ID 97979b3edafb81e81476b4a3c3ac02da4c90eed5
+2020-02-18 18:51:21,556 - INFO - 295 : memory usage 780580
+2020-02-18 18:51:21,569 - INFO - 295 : child memory usage 768536
+2020-02-18 18:51:21,637 - INFO - 295 : cpu time 478.010829
+2020-02-18 18:51:21,719 - INFO - 295 : child cpu time 2.178957
+2020-02-18 18:51:22,603 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107857920, swap memory: 0.
+2020-02-18 18:51:22,621 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2020-02-18 18:51:22,720 - INFO - 295 : All versions str:
+{"zope.interface": "4.5.0", "zict": "0.1.3", "xlwt": "1.3.0", "xlsxwriter": "1.1.1", "xlrd": "1.1.0", "wrapt": "1.11.2", "word2vec": "0.10.2", "widgetsnbextension": "3.5.1", "wheel": "0.30.0", "wget": "3.2", "werkzeug": "0.14.1", "websocket-client": "0.56.0", "webencodings": "0.5.1", "wcwidth": "0.1.7", "urllib3": "1.23", "update-checker": "0.16", "unicodecsv": "0.14.1", "typing": "3.7.4.1", "typing-extensions": "3.7.4.1", "typed-ast": "1.1.0", "twisted": "18.7.0", "tubes": "0.2.0", "treq": "18.6.0", "traittypes": "0.2.1", "traitlets": "4.3.2", "tqdm": "4.26.0", "tornado": "4.5.3", "torchvision": "0.4.2", "torch": "1.3.1", "toolz": "0.9.0", "theano": "1.0.4", "tf2onnx": "1.5.3", "tf-estimator-nightly": "1.14.0.dev2019060501", "textwrap3": "0.9.2", "textblob": "0.15.3", "testpath": "0.4.2", "terminado": "0.8.1", "termcolor": "1.1.0", "tensorflow": "2.0.0b1", "tensorboard": "2.0.1", "tenacity": "6.0.0", "tblib": "1.3.2", "tb-nightly": "1.14.0a20190603", "tabulate": "0.8.2", "tables": "3.4.4", "sympy": "1.3", "statsmodels": "0.9.0", "sqlalchemy": "1.2.14", "spyder": "3.3.1", "spyder-kernels": "0.2.6", "sphinxcontrib-websupport": "1.1.0", "sphinx": "1.8.1", "sortedcontainers": "2.0.5", "sortedcollections": "1.0.1", "snowballstemmer": "1.2.1", "snakeviz": "2.0.1", "smart-open": "1.9.0", "sklearn": "0.0", "sklearn-pandas": "1.7.0", "skl2onnx": "1.4.9", "six": "1.11.0", "singledispatch": "3.4.0.3", "simplegeneric": "0.8.1", "shap": "0.29.3", "setuptools": "41.6.0", "service-identity": "17.0.0", "send2trash": "1.5.0", "secretstorage": "3.1.0", "seaborn": "0.9.0", "scrubadub": "1.2.1", "scipy": "1.1.0", "scikit-learn": "0.20.3", "scikit-image": "0.16.2", "scikit-bio": "0.5.5", "s3transfer": "0.1.13", "ruamel.yaml": "0.15.89", "ruamel-yaml": "0.15.46", "rsa": "4.0", "rpy2": "3.0.5", "rope": "0.11.0", "retrying": "1.3.3", "resource": "0.2.1", "requests": "2.22.0", "requests-oauthlib": "1.3.0", "qtpy": "1.5.1", "qtconsole": "4.4.2", "qtawesome": "0.5.0", "pyzmq": "17.1.2", "pyyaml": "3.13", "pywavelets": "1.0.1", "pyviz-comms": "0.6.0", "pytz": "2019.3", "python-easyconfig": "0.1.7", "python-dateutil": "2.8.1", "python-daemon": "2.1.2", "pytest": "3.8.2", "pytest-remotedata": "0.3.0", "pytest-openfiles": "0.3.0", "pytest-doctestplus": "0.1.3", "pytest-astropy": "0.4.0", "pytest-arraydiff": "0.2", "pyspark": "2.4.4", "pysocks": "1.6.8", "pyprof2calltree": "1.4.4", "pyparsing": "2.3.0", "pypachy": "0.1.5", "pyopenssl": "18.0.0", "pyodbc": "3.1.1", "pynacl": "1.3.0", "pymysql": "0.9.2", "pymssql": "2.1.1", "pympler": "0.7", "pymongo": "3.7.1", "pymc3": "3.7", "pymc": "2.3.6", "pylint": "2.1.1", "pykafka": "2.8.0", "pyjwt": "1.7.1", "pyhamcrest": "1.9.0", "pygments": "2.2.0", "pyglet": "1.3.2", "pygithub": "1.44.1", "pyflakes": "2.0.0", "pydot": "1.4.1", "pycurl": "7.43.0.2", "pycrypto": "2.6.1", "pycparser": "2.19", "pycosat": "0.6.3", "pycodestyle": "2.4.0", "pyasn1": "0.4.4", "pyasn1-modules": "0.2.2", "pyarrow": "0.13.0", "pyang": "2.1", "py4j": "0.10.7", "py": "1.6.0", "ptyprocess": "0.6.0", "psycopg2": "2.7.5", "psutil": "5.4.7", "protobuf": "3.10.0", "prompt-toolkit": "2.0.7", "prometheus-client": "0.4.2", "prettytable": "0.7.2", "prettypandas": "0.0.4", "portalocker": "1.5.1", "pmdarima": "1.1.1", "ply": "3.11", "pluggy": "0.7.1", "plotly": "4.2.1", "pkginfo": "1.4.2", "pip": "19.3.1", "pillow": "5.3.0", "pickleshare": "0.7.5", "phonenumbers": "8.10.22", "pexpect": "4.6.0", "pep8": "1.7.1", "pbr": "4.2.0", "patsy": "0.5.1", "pathspec": "0.6.0", "pathlib2": "2.3.2", "path.py": "11.1.0", "partd": "0.3.8", "parso": "0.3.1", "paramiko": "2.6.0", "param": "1.7.0", "papermill": "1.2.1", "pandocfilters": "1.4.2", "pandasql": "0.7.3", "pandas": "0.23.4", "packaging": "18.0", "openpyxl": "2.5.8", "openfst": "1.6.1", "onnxruntime": "1.0.0", "onnxmltools": "1.6.0", "onnxconverter-common": "1.6.0", "onnx": "1.6.0", "olefile": "0.46", "okpy": "1.13.11", "odo": "0.5.1", "oauthlib": "3.1.0", "numpydoc": "0.8.0", "numpy": "1.16.2", "numexpr": "2.6.8", "numba": "0.40.0", "notebook": "5.7.2", "nose": "1.3.7", "nltk": "3.3", "nimbusml": "1.5.0", "networkx": "2.2", "ndg-httpsclient": "0.5.1", "nbformat": "4.4.0", "nbconvert": "5.6.1", "navigator-updater": "0.2.1", "natsort": "5.4.0", "multipledispatch": "0.6.0", "multimethods": "1.0.0", "msrestazure": "0.6.2", "msrest": "0.6.10", "msgpack": "0.5.6", "mpmath": "1.0.0", "more-itertools": "4.3.0", "mock": "2.0.0", "mkl-random": "1.0.1", "mkl-fft": "1.0.6", "mistune": "0.8.4", "memory-profiler": "0.56.0", "mccabe": "0.6.1", "matplotlib": "3.0.0", "markupsafe": "1.1.0", "markdown": "3.0.1", "lxml": "4.2.5", "luigi": "2.8.2", "lockfile": "0.12.2", "locket": "0.2.0", "llvmlite": "0.25.0", "line-profiler": "2.1.2", "lightgbm": "2.3.0", "libarchive-c": "2.8", "liac-arff": "2.4.0", "lazy-object-proxy": "1.3.1", "lancet-ioam": "0.9.0", "kqlmagic": "0.1.107.post1", "knack": "0.5.1", "klein": "19.6.0", "kiwisolver": "1.0.1", "keyring": "13.2.1", "keras2onnx": "1.6.0", "keras": "2.3.1", "keras-preprocessing": "1.1.0", "keras-applications": "1.0.8", "kazoo": "2.5.0", "kafka-python": "1.4.7", "jupyterlab": "0.34.12", "jupyterlab-launcher": "0.13.1", "jupyter": "1.0.0", "jupyter-core": "4.4.0", "jupyter-console": "6.0.0", "jupyter-client": "5.2.3", "jsonsir": "0.0.2", "jsonschema": "2.6.0", "jsonpickle": "1.2", "jsonform": "0.0.2", "json-logging-py": "0.2", "joblib": "0.14.0", "jmespath": "0.9.4", "jinja2": "2.10", "jeepney": "0.4", "jedi": "0.13.1", "jdcal": "1.4", "itsdangerous": "0.24", "isort": "4.3.4", "isodate": "0.6.0", "ipywidgets": "7.5.1", "ipython": "7.1.1", "ipython-genutils": "0.2.0", "ipykernel": "5.1.3", "interpret-core": "0.1.18", "interpret-community": "0.1.0.3.2", "incremental": "17.5.0", "imagesize": "1.1.0", "imageio": "2.4.1", "idna": "2.7", "hyperlink": "18.0.0", "humanfriendly": "4.18", "html5lib": "0.9999999", "holoviews": "1.10.7", "heapdict": "1.0.0", "hdmedians": "0.13", "h5py": "2.8.0", "gym": "0.15.3", "gunicorn": "19.9.0", "grpcio": "1.25.0", "greenlet": "0.4.15", "graphviz": "0.13.2", "google-pasta": "0.1.8", "google-auth": "1.7.0", "google-auth-oauthlib": "0.4.1", "gmpy2": "2.0.8", "glob2": "0.6", "ggplot": "0.11.5", "gevent": "1.3.6", "gensim": "3.8.1", "gdal": "2.3.0", "gast": "0.3.2", "futures": "3.1.1", "future": "0.16.0", "fusepy": "3.0.1", "ftfy": "5.3.0", "folium": "0.2.1", "flask": "1.0.3", "flask-cors": "3.0.6", "fire": "0.2.1", "filelock": "3.0.8", "feedparser": "5.2.1", "fastcache": "1.0.2", "et-xmlfile": "1.0.1", "entrypoints": "0.2.3", "elasticsearch": "7.0.5", "edward": "1.3.5", "dotnetcore2": "2.1.10", "dora": "0.0.2", "docutils": "0.14", "docopt": "0.6.2", "docker": "4.1.0", "docker-pycreds": "0.4.0", "docker-py": "1.10.6", "distro": "1.4.0", "distributed": "1.23.3", "dill": "0.3.1.1", "deprecated": "1.2.6", "defusedxml": "0.5.0", "decorator": "4.3.0", "datashape": "0.5.4", "datascience": "0.10.6", "datacleaner": "0.1.5", "dask": "0.19.3", "cytoolz": "0.9.0.1", "cython": "0.29.14", "cycler": "0.10.0", "cryptography": "2.3.1", "coveralls": "0.5", "coverage": "3.7.1", "contextlib2": "0.5.5", "constantly": "15.1.0", "configparser": "3.7.4", "conda": "4.5.11", "conda-build": "3.16.0", "colorama": "0.3.9", "cntk": "2.5.1", "clyent": "1.2.2", "cloudpickle": "1.2.2", "click": "7.0", "chardet": "3.0.4", "characteristic": "14.3.0", "cffi": "1.11.5", "certifi": "2018.10.15", "cachetools": "3.1.1", "cachecontrol": "0.12.5", "bz2file": "0.98", "brewer2mpl": "1.4.1", "bqplot": "0.12.0", "bottleneck": "1.2.1", "botocore": "1.8.50", "boto3": "1.4.8", "boto": "2.49.0", "bokeh": "0.13.0", "bleach": "1.5.0", "blaze": "0.11.3", "bkcharts": "0.2", "bitarray": "0.8.3", "beautifulsoup4": "4.6.3", "beautifier": "0.5.5", "bcrypt": "3.1.7", "backports.weakref": "1.0rc1", "backports.tempfile": "1.0", "backports.shutil-get-terminal-size": "1.0.0", "backcall": "0.1.0", "babel": "2.6.0", "azureml-widgets": "1.0.72", "azureml-train": "1.0.72", "azureml-train-restclients-hyperdrive": "1.0.72", "azureml-train-core": "1.0.72", "azureml-train-automl": "1.0.72", "azureml-telemetry": "1.0.72", "azureml-sdk": "1.0.72", "azureml-pipeline": "1.0.72", "azureml-pipeline-steps": "1.0.72", "azureml-pipeline-core": "1.0.72", "azureml-opendatasets": "1.0.72.1", "azureml-model-management-sdk": "1.0.1b6.post1", "azureml-interpret": "1.0.72.1", "azureml-explain-model": "1.0.72", "azureml-defaults": "1.0.72", "azureml-dataprep": "1.1.30", "azureml-dataprep-native": "13.1.0", "azureml-core": "1.0.72", "azureml-contrib-notebook": "1.0.72", "azureml-automl-core": "1.0.72.1", "azure": "4.0.0", "azure-storage-queue": "2.1.0", "azure-storage-file": "1.4.0", "azure-storage-common": "2.1.0", "azure-storage-blob": "2.1.0", "azure-servicemanagement-legacy": "0.20.6", "azure-servicefabric": "6.3.0.0", "azure-servicebus": "0.21.1", "azure-nspkg": "3.0.2", "azure-mgmt": "4.0.0", "azure-mgmt-web": "0.35.0", "azure-mgmt-trafficmanager": "0.50.0", "azure-mgmt-subscription": "0.2.0", "azure-mgmt-storage": "2.0.0", "azure-mgmt-sql": "0.9.1", "azure-mgmt-signalr": "0.1.1", "azure-mgmt-servicefabric": "0.2.0", "azure-mgmt-servicebus": "0.5.3", "azure-mgmt-search": "2.1.0", "azure-mgmt-scheduler": "2.0.0", "azure-mgmt-resource": "2.0.0", "azure-mgmt-reservations": "0.2.1", "azure-mgmt-relay": "0.1.0", "azure-mgmt-redis": "5.0.0", "azure-mgmt-recoveryservicesbackup": "0.3.0", "azure-mgmt-recoveryservices": "0.3.0", "azure-mgmt-rdbms": "1.9.0", "azure-mgmt-powerbiembedded": "2.0.0", "azure-mgmt-policyinsights": "0.1.0", "azure-mgmt-nspkg": "3.0.2", "azure-mgmt-notificationhubs": "2.1.0", "azure-mgmt-network": "2.7.0", "azure-mgmt-msi": "0.2.0", "azure-mgmt-monitor": "0.5.2", "azure-mgmt-media": "1.0.0", "azure-mgmt-marketplaceordering": "0.1.0", "azure-mgmt-maps": "0.1.0", "azure-mgmt-managementpartner": "0.1.1", "azure-mgmt-managementgroups": "0.1.0", "azure-mgmt-machinelearningcompute": "0.4.1", "azure-mgmt-logic": "3.0.0", "azure-mgmt-loganalytics": "0.2.0", "azure-mgmt-keyvault": "1.1.0", "azure-mgmt-iothubprovisioningservices": "0.2.0", "azure-mgmt-iothub": "0.5.0", "azure-mgmt-iotcentral": "0.1.0", "azure-mgmt-hanaonazure": "0.1.1", "azure-mgmt-eventhub": "2.6.0", "azure-mgmt-eventgrid": "1.0.0", "azure-mgmt-dns": "2.1.0", "azure-mgmt-devtestlabs": "2.2.0", "azure-mgmt-devspaces": "0.1.0", "azure-mgmt-datamigration": "1.0.0", "azure-mgmt-datalake-store": "0.5.0", "azure-mgmt-datalake-nspkg": "3.0.1", "azure-mgmt-datalake-analytics": "0.6.0", "azure-mgmt-datafactory": "0.6.0", "azure-mgmt-cosmosdb": "0.4.1", "azure-mgmt-containerservice": "4.4.0", "azure-mgmt-containerregistry": "2.8.0", "azure-mgmt-containerinstance": "1.5.0", "azure-mgmt-consumption": "2.0.0", "azure-mgmt-compute": "4.6.2", "azure-mgmt-commerce": "1.0.1", "azure-mgmt-cognitiveservices": "3.0.0", "azure-mgmt-cdn": "3.1.0", "azure-mgmt-billing": "0.2.0", "azure-mgmt-batchai": "2.0.0", "azure-mgmt-batch": "5.0.1", "azure-mgmt-authorization": "0.50.0", "azure-mgmt-applicationinsights": "0.1.1", "azure-mgmt-advisor": "1.0.1", "azure-loganalytics": "0.1.0", "azure-kusto-ingest": "0.0.38", "azure-kusto-data": "0.0.38", "azure-keyvault": "1.1.0", "azure-graphrbac": "0.40.0", "azure-eventgrid": "1.3.0", "azure-datalake-store": "0.0.48", "azure-cosmosdb-table": "1.0.6", "azure-cosmosdb-nspkg": "2.0.2", "azure-common": "1.1.23", "azure-cli-telemetry": "1.0.4", "azure-cli-nspkg": "3.0.4", "azure-cli-core": "2.0.54", "azure-batch": "4.1.3", "azure-applicationinsights": "0.1.0", "automat": "0.7.0", "attrs": "18.2.0", "atomicwrites": "1.2.1", "astropy": "3.0.4", "astroid": "2.0.4", "astor": "0.8.0", "asn1crypto": "0.24.0", "arrow": "0.15.4", "argcomplete": "1.10.0", "applicationinsights": "0.11.9", "appdirs": "1.4.3", "antlr4-python3-runtime": "4.7.2", "ansiwrap": "0.8.4", "anaconda-project": "0.8.2", "anaconda-navigator": "1.9.2", "anaconda-client": "1.7.2", "altair": "3.2.0", "alabaster": "0.7.11", "adal": "1.2.2", "absl-py": "0.8.1"}
+2020-02-18 18:51:22,789 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Starting fit_pipeline]memory usage 780580
+2020-02-18 18:51:22,948 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Starting fit_pipeline]child memory usage 768536
+2020-02-18 18:51:23,051 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Starting fit_pipeline]cpu time 478.27732
+2020-02-18 18:51:23,121 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Starting fit_pipeline]child cpu time 2.178957
+2020-02-18 18:51:23,208 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107857920, swap memory: 0.
+2020-02-18 18:51:23,318 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2020-02-18 18:51:23,442 - INFO - 295 : Using child run AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0
+2020-02-18 18:51:23,532 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before preprocess]memory usage 780580
+2020-02-18 18:51:23,654 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before preprocess]child memory usage 768536
+2020-02-18 18:51:23,751 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before preprocess]cpu time 478.426502
+2020-02-18 18:51:23,839 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before preprocess]child cpu time 2.178957
+2020-02-18 18:51:23,978 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before executing pipeline]memory usage 780580
+2020-02-18 18:51:24,083 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before executing pipeline]child memory usage 768536
+2020-02-18 18:51:24,193 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before executing pipeline]cpu time 478.515817
+2020-02-18 18:51:24,261 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][Before executing pipeline]child cpu time 2.178957
+2020-02-18 18:51:24,405 - INFO - 295 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": false, "criterion": "mse", "max_features": "sqrt", "min_samples_leaf": 0.05040306135985514, "min_samples_split": 0.002602463309528381, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "97979b3edafb81e81476b4a3c3ac02da4c90eed5"}.
+2020-02-18 18:51:24,498 - INFO - 295 : Running with the following AutoML settings:
+ - name: my-third-experiment
+ - subscription_id: 055108ec-2785-464c-9375-6599cde5996d
+ - region: centralus
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 3
+ - primary_metric: spearman_correlation
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 25.0
+ - y_max: 346.0
+ - num_classes: None
+ - featurization: off
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 6
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'Prophet']
+ - supported_models: ['ElasticNet', 'GradientBoosting', 'DecisionTree', 'KNN', 'LassoLars', 'SGD', 'RandomForest', 'ExtremeRandomTrees', 'LightGBM', 'XGBoostRegressor', 'FastLinearRegressor', 'OnlineGradientDescentRegressor', 'TensorFlowLinearRegressor', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: False
+ - enable_stack_ensembling: False
+ - ensemble_iterations: None
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - label_column_name: None
+ - weight_column_name: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2020-02-18 18:51:24,592 - INFO - 295 : Component PrepareData finished after 0.031219533333333334 minutes.
+2020-02-18 18:51:24,699 - INFO - 295 : ActivityStarted: RunPipeline
+2020-02-18 18:51:25,033 - INFO - 295 : Limits set to mem_in_mb=None, wall_time_in_s=360, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-02-18 18:51:25,056 - INFO - 295 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fc2a0b6bf60>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-02-18 18:51:31,797 - INFO - 295 : memory usage 780580
+2020-02-18 18:51:31,832 - INFO - 295 : child memory usage 768536
+2020-02-18 18:51:31,948 - INFO - 295 : cpu time 478.902381
+2020-02-18 18:51:32,001 - INFO - 295 : child cpu time 2.178957
+2020-02-18 18:51:40,177 - INFO - 437 : ActivityStarted: Run
+2020-02-18 18:51:40,244 - INFO - 437 : ActivityStarted: RunCV
+2020-02-18 18:51:40,277 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:51:40,552 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=274.99[ms]
+2020-02-18 18:51:40,624 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:51:40,698 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:51:40,824 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=126.01[ms]
+2020-02-18 18:51:40,876 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:51:41,047 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=422.82[ms]
+2020-02-18 18:51:41,109 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:51:41,281 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=172.22[ms]
+2020-02-18 18:51:41,608 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:51:41,628 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:51:41,737 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=108.7[ms]
+2020-02-18 18:51:41,844 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:51:41,982 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=373.13[ms]
+2020-02-18 18:51:42,061 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:51:42,082 - INFO - 295 : memory usage 780580
+2020-02-18 18:51:42,181 - INFO - 295 : child memory usage 768536
+2020-02-18 18:51:42,307 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=245.58[ms]
+2020-02-18 18:51:42,326 - INFO - 295 : cpu time 478.993182
+2020-02-18 18:51:42,420 - INFO - 295 : child cpu time 2.178957
+2020-02-18 18:51:42,421 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:51:42,579 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:51:42,771 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=192.35[ms]
+2020-02-18 18:51:42,853 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:51:42,959 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=538.41[ms]
+2020-02-18 18:51:43,208 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:51:43,312 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=103.23[ms]
+2020-02-18 18:51:43,340 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:51:43,509 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:51:43,571 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=61.29[ms]
+2020-02-18 18:51:43,627 - INFO - 295 : Regression metrics debug: {'y_test': (70,), 'y_pred': (70,), 'sample_weight': None}
+2020-02-18 18:51:43,766 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=426.9[ms]
+2020-02-18 18:51:43,842 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:51:44,050 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=207.96[ms]
+2020-02-18 18:51:44,087 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:51:44,152 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:51:44,973 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=820.01[ms]
+2020-02-18 18:51:45,000 - INFO - 295 : Regression metrics debug: {'y_test': (70,), 'y_pred': (70,), 'sample_weight': None}
+2020-02-18 18:51:45,089 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=1001.37[ms]
+2020-02-18 18:51:45,161 - INFO - 455 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=4917.2[ms]
+2020-02-18 18:51:45,237 - INFO - 437 : ActivityStarted: RunCVMean
+2020-02-18 18:51:45,329 - INFO - 455 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=91.5[ms]
+2020-02-18 18:51:45,666 - INFO - 455 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=5488.62[ms]
+2020-02-18 18:51:47,867 - INFO - 295 : Limits set to mem_in_mb=None, wall_time_in_s=360, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-02-18 18:51:47,892 - INFO - 295 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fc2a0b6bf60>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'NoneType'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'int'>, 'include_models': <class 'bool'>}
+2020-02-18 18:51:52,569 - INFO - 295 : memory usage 780580
+2020-02-18 18:51:52,587 - INFO - 295 : child memory usage 768536
+2020-02-18 18:51:52,756 - INFO - 295 : cpu time 479.252131
+2020-02-18 18:51:52,859 - INFO - 295 : child cpu time 18.373801
+2020-02-18 18:52:02,946 - INFO - 295 : memory usage 780580
+2020-02-18 18:52:02,972 - INFO - 295 : child memory usage 768536
+2020-02-18 18:52:03,084 - INFO - 295 : cpu time 479.361166
+2020-02-18 18:52:03,191 - INFO - 295 : child cpu time 18.373801
+2020-02-18 18:52:03,788 - INFO - 437 : ActivityStarted: Run
+2020-02-18 18:52:03,823 - INFO - 437 : ActivityStarted: TrainFull
+2020-02-18 18:52:03,892 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:52:04,144 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=251.91[ms]
+2020-02-18 18:52:04,159 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:52:04,257 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:52:04,468 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=210.38[ms]
+2020-02-18 18:52:04,588 - INFO - 295 : Regression metrics debug: {'y_test': (353,), 'y_pred': (353,), 'sample_weight': None}
+2020-02-18 18:52:04,753 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=593.65[ms]
+2020-02-18 18:52:04,822 - INFO - 455 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=999.19[ms]
+2020-02-18 18:52:05,351 - INFO - 455 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=1563.09[ms]
+2020-02-18 18:52:07,621 - INFO - 295 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=42921.75[ms]
+2020-02-18 18:52:07,637 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][After executing pipeline]memory usage 780580
+2020-02-18 18:52:07,704 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][After executing pipeline]child memory usage 768536
+2020-02-18 18:52:07,771 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][After executing pipeline]cpu time 479.474926
+2020-02-18 18:52:07,848 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][After executing pipeline]child cpu time 34.139821
+2020-02-18 18:52:07,933 - INFO - 295 : Pipeline execution finished with a score of 0.6937894380544869
+2020-02-18 18:52:08,043 - INFO - 295 : Start logging metrics for child run.
+2020-02-18 18:52:08,128 - INFO - 295 : ActivityStarted: MetricsAndSaveModel
+2020-02-18 18:52:10,864 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2020-02-18 18:52:10,886 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2020-02-18 18:52:10,944 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2020-02-18 18:52:11,027 - INFO - 295 : run_id:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0, pipeline_id:97979b3edafb81e81476b4a3c3ac02da4c90eed5,The following metrics have been logged for the child run: {'normalized_mean_absolute_error': 0.14492361989393376, 'mean_absolute_error': 46.52048198595274, 'predicted_true': <class 'dict'>, 'spearman_correlation': 0.6937894380544869, 'mean_absolute_percentage_error': 42.25652766242041, 'median_absolute_error': 45.10211044731162, 'explained_variance': 0.4961383719813786, 'normalized_root_mean_squared_log_error': 0.16747516476946747, 'normalized_median_absolute_error': 0.14050501696981815, 'root_mean_squared_log_error': 0.43396637677175, 'root_mean_squared_error': 55.96415312877389, 'normalized_root_mean_squared_error': 0.17434315616440463, 'residuals': <class 'dict'>, 'r2_score': 0.47657862614042124, 'train time': 0.43828759999999994, 'predict_time': 0.3233976, 'fit_time': 0.11489}.
+2020-02-18 18:52:11,917 - INFO - 295 : Component CompleteRun finished after 0.8199425333333333 minutes.
+2020-02-18 18:52:11,933 - INFO - 295 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=3804.67[ms]
+2020-02-18 18:52:12,665 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][End fit_pipeline]memory usage 780580
+2020-02-18 18:52:12,679 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][End fit_pipeline]child memory usage 768536
+2020-02-18 18:52:12,762 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][End fit_pipeline]cpu time 480.412961
+2020-02-18 18:52:12,824 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_0][End fit_pipeline]child cpu time 34.139821
+2020-02-18 18:52:12,919 - INFO - 295 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=52517.62 [ms]
+2020-02-18 18:52:13,011 - INFO - 295 : Start iteration: 1
+2020-02-18 18:52:13,118 - INFO - 295 : ActivityStarted, FitIteration
+2020-02-18 18:52:13,198 - INFO - 295 : ActivityStarted, GetPipeline
+2020-02-18 18:52:13,266 - INFO - 295 : Querying Jasmine for next task.
+2020-02-18 18:52:13,290 - INFO - 295 : memory usage 780580
+2020-02-18 18:52:13,400 - INFO - 295 : child memory usage 768536
+2020-02-18 18:52:13,481 - INFO - 295 : cpu time 480.53454
+2020-02-18 18:52:13,572 - INFO - 295 : child cpu time 34.139821
+2020-02-18 18:52:14,204 - INFO - 295 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1005.53 [ms]
+2020-02-18 18:52:14,222 - INFO - 295 : Received pipeline ID 509be37c39972b34deee7a2fde5a747d91172465
+2020-02-18 18:52:15,281 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107857920, swap memory: 0.
+2020-02-18 18:52:15,293 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2020-02-18 18:52:15,369 - INFO - 295 : All versions str:
+{"zope.interface": "4.5.0", "zict": "0.1.3", "xlwt": "1.3.0", "xlsxwriter": "1.1.1", "xlrd": "1.1.0", "wrapt": "1.11.2", "word2vec": "0.10.2", "widgetsnbextension": "3.5.1", "wheel": "0.30.0", "wget": "3.2", "werkzeug": "0.14.1", "websocket-client": "0.56.0", "webencodings": "0.5.1", "wcwidth": "0.1.7", "urllib3": "1.23", "update-checker": "0.16", "unicodecsv": "0.14.1", "typing": "3.7.4.1", "typing-extensions": "3.7.4.1", "typed-ast": "1.1.0", "twisted": "18.7.0", "tubes": "0.2.0", "treq": "18.6.0", "traittypes": "0.2.1", "traitlets": "4.3.2", "tqdm": "4.26.0", "tornado": "4.5.3", "torchvision": "0.4.2", "torch": "1.3.1", "toolz": "0.9.0", "theano": "1.0.4", "tf2onnx": "1.5.3", "tf-estimator-nightly": "1.14.0.dev2019060501", "textwrap3": "0.9.2", "textblob": "0.15.3", "testpath": "0.4.2", "terminado": "0.8.1", "termcolor": "1.1.0", "tensorflow": "2.0.0b1", "tensorboard": "2.0.1", "tenacity": "6.0.0", "tblib": "1.3.2", "tb-nightly": "1.14.0a20190603", "tabulate": "0.8.2", "tables": "3.4.4", "sympy": "1.3", "statsmodels": "0.9.0", "sqlalchemy": "1.2.14", "spyder": "3.3.1", "spyder-kernels": "0.2.6", "sphinxcontrib-websupport": "1.1.0", "sphinx": "1.8.1", "sortedcontainers": "2.0.5", "sortedcollections": "1.0.1", "snowballstemmer": "1.2.1", "snakeviz": "2.0.1", "smart-open": "1.9.0", "sklearn": "0.0", "sklearn-pandas": "1.7.0", "skl2onnx": "1.4.9", "six": "1.11.0", "singledispatch": "3.4.0.3", "simplegeneric": "0.8.1", "shap": "0.29.3", "setuptools": "41.6.0", "service-identity": "17.0.0", "send2trash": "1.5.0", "secretstorage": "3.1.0", "seaborn": "0.9.0", "scrubadub": "1.2.1", "scipy": "1.1.0", "scikit-learn": "0.20.3", "scikit-image": "0.16.2", "scikit-bio": "0.5.5", "s3transfer": "0.1.13", "ruamel.yaml": "0.15.89", "ruamel-yaml": "0.15.46", "rsa": "4.0", "rpy2": "3.0.5", "rope": "0.11.0", "retrying": "1.3.3", "resource": "0.2.1", "requests": "2.22.0", "requests-oauthlib": "1.3.0", "qtpy": "1.5.1", "qtconsole": "4.4.2", "qtawesome": "0.5.0", "pyzmq": "17.1.2", "pyyaml": "3.13", "pywavelets": "1.0.1", "pyviz-comms": "0.6.0", "pytz": "2019.3", "python-easyconfig": "0.1.7", "python-dateutil": "2.8.1", "python-daemon": "2.1.2", "pytest": "3.8.2", "pytest-remotedata": "0.3.0", "pytest-openfiles": "0.3.0", "pytest-doctestplus": "0.1.3", "pytest-astropy": "0.4.0", "pytest-arraydiff": "0.2", "pyspark": "2.4.4", "pysocks": "1.6.8", "pyprof2calltree": "1.4.4", "pyparsing": "2.3.0", "pypachy": "0.1.5", "pyopenssl": "18.0.0", "pyodbc": "3.1.1", "pynacl": "1.3.0", "pymysql": "0.9.2", "pymssql": "2.1.1", "pympler": "0.7", "pymongo": "3.7.1", "pymc3": "3.7", "pymc": "2.3.6", "pylint": "2.1.1", "pykafka": "2.8.0", "pyjwt": "1.7.1", "pyhamcrest": "1.9.0", "pygments": "2.2.0", "pyglet": "1.3.2", "pygithub": "1.44.1", "pyflakes": "2.0.0", "pydot": "1.4.1", "pycurl": "7.43.0.2", "pycrypto": "2.6.1", "pycparser": "2.19", "pycosat": "0.6.3", "pycodestyle": "2.4.0", "pyasn1": "0.4.4", "pyasn1-modules": "0.2.2", "pyarrow": "0.13.0", "pyang": "2.1", "py4j": "0.10.7", "py": "1.6.0", "ptyprocess": "0.6.0", "psycopg2": "2.7.5", "psutil": "5.4.7", "protobuf": "3.10.0", "prompt-toolkit": "2.0.7", "prometheus-client": "0.4.2", "prettytable": "0.7.2", "prettypandas": "0.0.4", "portalocker": "1.5.1", "pmdarima": "1.1.1", "ply": "3.11", "pluggy": "0.7.1", "plotly": "4.2.1", "pkginfo": "1.4.2", "pip": "19.3.1", "pillow": "5.3.0", "pickleshare": "0.7.5", "phonenumbers": "8.10.22", "pexpect": "4.6.0", "pep8": "1.7.1", "pbr": "4.2.0", "patsy": "0.5.1", "pathspec": "0.6.0", "pathlib2": "2.3.2", "path.py": "11.1.0", "partd": "0.3.8", "parso": "0.3.1", "paramiko": "2.6.0", "param": "1.7.0", "papermill": "1.2.1", "pandocfilters": "1.4.2", "pandasql": "0.7.3", "pandas": "0.23.4", "packaging": "18.0", "openpyxl": "2.5.8", "openfst": "1.6.1", "onnxruntime": "1.0.0", "onnxmltools": "1.6.0", "onnxconverter-common": "1.6.0", "onnx": "1.6.0", "olefile": "0.46", "okpy": "1.13.11", "odo": "0.5.1", "oauthlib": "3.1.0", "numpydoc": "0.8.0", "numpy": "1.16.2", "numexpr": "2.6.8", "numba": "0.40.0", "notebook": "5.7.2", "nose": "1.3.7", "nltk": "3.3", "nimbusml": "1.5.0", "networkx": "2.2", "ndg-httpsclient": "0.5.1", "nbformat": "4.4.0", "nbconvert": "5.6.1", "navigator-updater": "0.2.1", "natsort": "5.4.0", "multipledispatch": "0.6.0", "multimethods": "1.0.0", "msrestazure": "0.6.2", "msrest": "0.6.10", "msgpack": "0.5.6", "mpmath": "1.0.0", "more-itertools": "4.3.0", "mock": "2.0.0", "mkl-random": "1.0.1", "mkl-fft": "1.0.6", "mistune": "0.8.4", "memory-profiler": "0.56.0", "mccabe": "0.6.1", "matplotlib": "3.0.0", "markupsafe": "1.1.0", "markdown": "3.0.1", "lxml": "4.2.5", "luigi": "2.8.2", "lockfile": "0.12.2", "locket": "0.2.0", "llvmlite": "0.25.0", "line-profiler": "2.1.2", "lightgbm": "2.3.0", "libarchive-c": "2.8", "liac-arff": "2.4.0", "lazy-object-proxy": "1.3.1", "lancet-ioam": "0.9.0", "kqlmagic": "0.1.107.post1", "knack": "0.5.1", "klein": "19.6.0", "kiwisolver": "1.0.1", "keyring": "13.2.1", "keras2onnx": "1.6.0", "keras": "2.3.1", "keras-preprocessing": "1.1.0", "keras-applications": "1.0.8", "kazoo": "2.5.0", "kafka-python": "1.4.7", "jupyterlab": "0.34.12", "jupyterlab-launcher": "0.13.1", "jupyter": "1.0.0", "jupyter-core": "4.4.0", "jupyter-console": "6.0.0", "jupyter-client": "5.2.3", "jsonsir": "0.0.2", "jsonschema": "2.6.0", "jsonpickle": "1.2", "jsonform": "0.0.2", "json-logging-py": "0.2", "joblib": "0.14.0", "jmespath": "0.9.4", "jinja2": "2.10", "jeepney": "0.4", "jedi": "0.13.1", "jdcal": "1.4", "itsdangerous": "0.24", "isort": "4.3.4", "isodate": "0.6.0", "ipywidgets": "7.5.1", "ipython": "7.1.1", "ipython-genutils": "0.2.0", "ipykernel": "5.1.3", "interpret-core": "0.1.18", "interpret-community": "0.1.0.3.2", "incremental": "17.5.0", "imagesize": "1.1.0", "imageio": "2.4.1", "idna": "2.7", "hyperlink": "18.0.0", "humanfriendly": "4.18", "html5lib": "0.9999999", "holoviews": "1.10.7", "heapdict": "1.0.0", "hdmedians": "0.13", "h5py": "2.8.0", "gym": "0.15.3", "gunicorn": "19.9.0", "grpcio": "1.25.0", "greenlet": "0.4.15", "graphviz": "0.13.2", "google-pasta": "0.1.8", "google-auth": "1.7.0", "google-auth-oauthlib": "0.4.1", "gmpy2": "2.0.8", "glob2": "0.6", "ggplot": "0.11.5", "gevent": "1.3.6", "gensim": "3.8.1", "gdal": "2.3.0", "gast": "0.3.2", "futures": "3.1.1", "future": "0.16.0", "fusepy": "3.0.1", "ftfy": "5.3.0", "folium": "0.2.1", "flask": "1.0.3", "flask-cors": "3.0.6", "fire": "0.2.1", "filelock": "3.0.8", "feedparser": "5.2.1", "fastcache": "1.0.2", "et-xmlfile": "1.0.1", "entrypoints": "0.2.3", "elasticsearch": "7.0.5", "edward": "1.3.5", "dotnetcore2": "2.1.10", "dora": "0.0.2", "docutils": "0.14", "docopt": "0.6.2", "docker": "4.1.0", "docker-pycreds": "0.4.0", "docker-py": "1.10.6", "distro": "1.4.0", "distributed": "1.23.3", "dill": "0.3.1.1", "deprecated": "1.2.6", "defusedxml": "0.5.0", "decorator": "4.3.0", "datashape": "0.5.4", "datascience": "0.10.6", "datacleaner": "0.1.5", "dask": "0.19.3", "cytoolz": "0.9.0.1", "cython": "0.29.14", "cycler": "0.10.0", "cryptography": "2.3.1", "coveralls": "0.5", "coverage": "3.7.1", "contextlib2": "0.5.5", "constantly": "15.1.0", "configparser": "3.7.4", "conda": "4.5.11", "conda-build": "3.16.0", "colorama": "0.3.9", "cntk": "2.5.1", "clyent": "1.2.2", "cloudpickle": "1.2.2", "click": "7.0", "chardet": "3.0.4", "characteristic": "14.3.0", "cffi": "1.11.5", "certifi": "2018.10.15", "cachetools": "3.1.1", "cachecontrol": "0.12.5", "bz2file": "0.98", "brewer2mpl": "1.4.1", "bqplot": "0.12.0", "bottleneck": "1.2.1", "botocore": "1.8.50", "boto3": "1.4.8", "boto": "2.49.0", "bokeh": "0.13.0", "bleach": "1.5.0", "blaze": "0.11.3", "bkcharts": "0.2", "bitarray": "0.8.3", "beautifulsoup4": "4.6.3", "beautifier": "0.5.5", "bcrypt": "3.1.7", "backports.weakref": "1.0rc1", "backports.tempfile": "1.0", "backports.shutil-get-terminal-size": "1.0.0", "backcall": "0.1.0", "babel": "2.6.0", "azureml-widgets": "1.0.72", "azureml-train": "1.0.72", "azureml-train-restclients-hyperdrive": "1.0.72", "azureml-train-core": "1.0.72", "azureml-train-automl": "1.0.72", "azureml-telemetry": "1.0.72", "azureml-sdk": "1.0.72", "azureml-pipeline": "1.0.72", "azureml-pipeline-steps": "1.0.72", "azureml-pipeline-core": "1.0.72", "azureml-opendatasets": "1.0.72.1", "azureml-model-management-sdk": "1.0.1b6.post1", "azureml-interpret": "1.0.72.1", "azureml-explain-model": "1.0.72", "azureml-defaults": "1.0.72", "azureml-dataprep": "1.1.30", "azureml-dataprep-native": "13.1.0", "azureml-core": "1.0.72", "azureml-contrib-notebook": "1.0.72", "azureml-automl-core": "1.0.72.1", "azure": "4.0.0", "azure-storage-queue": "2.1.0", "azure-storage-file": "1.4.0", "azure-storage-common": "2.1.0", "azure-storage-blob": "2.1.0", "azure-servicemanagement-legacy": "0.20.6", "azure-servicefabric": "6.3.0.0", "azure-servicebus": "0.21.1", "azure-nspkg": "3.0.2", "azure-mgmt": "4.0.0", "azure-mgmt-web": "0.35.0", "azure-mgmt-trafficmanager": "0.50.0", "azure-mgmt-subscription": "0.2.0", "azure-mgmt-storage": "2.0.0", "azure-mgmt-sql": "0.9.1", "azure-mgmt-signalr": "0.1.1", "azure-mgmt-servicefabric": "0.2.0", "azure-mgmt-servicebus": "0.5.3", "azure-mgmt-search": "2.1.0", "azure-mgmt-scheduler": "2.0.0", "azure-mgmt-resource": "2.0.0", "azure-mgmt-reservations": "0.2.1", "azure-mgmt-relay": "0.1.0", "azure-mgmt-redis": "5.0.0", "azure-mgmt-recoveryservicesbackup": "0.3.0", "azure-mgmt-recoveryservices": "0.3.0", "azure-mgmt-rdbms": "1.9.0", "azure-mgmt-powerbiembedded": "2.0.0", "azure-mgmt-policyinsights": "0.1.0", "azure-mgmt-nspkg": "3.0.2", "azure-mgmt-notificationhubs": "2.1.0", "azure-mgmt-network": "2.7.0", "azure-mgmt-msi": "0.2.0", "azure-mgmt-monitor": "0.5.2", "azure-mgmt-media": "1.0.0", "azure-mgmt-marketplaceordering": "0.1.0", "azure-mgmt-maps": "0.1.0", "azure-mgmt-managementpartner": "0.1.1", "azure-mgmt-managementgroups": "0.1.0", "azure-mgmt-machinelearningcompute": "0.4.1", "azure-mgmt-logic": "3.0.0", "azure-mgmt-loganalytics": "0.2.0", "azure-mgmt-keyvault": "1.1.0", "azure-mgmt-iothubprovisioningservices": "0.2.0", "azure-mgmt-iothub": "0.5.0", "azure-mgmt-iotcentral": "0.1.0", "azure-mgmt-hanaonazure": "0.1.1", "azure-mgmt-eventhub": "2.6.0", "azure-mgmt-eventgrid": "1.0.0", "azure-mgmt-dns": "2.1.0", "azure-mgmt-devtestlabs": "2.2.0", "azure-mgmt-devspaces": "0.1.0", "azure-mgmt-datamigration": "1.0.0", "azure-mgmt-datalake-store": "0.5.0", "azure-mgmt-datalake-nspkg": "3.0.1", "azure-mgmt-datalake-analytics": "0.6.0", "azure-mgmt-datafactory": "0.6.0", "azure-mgmt-cosmosdb": "0.4.1", "azure-mgmt-containerservice": "4.4.0", "azure-mgmt-containerregistry": "2.8.0", "azure-mgmt-containerinstance": "1.5.0", "azure-mgmt-consumption": "2.0.0", "azure-mgmt-compute": "4.6.2", "azure-mgmt-commerce": "1.0.1", "azure-mgmt-cognitiveservices": "3.0.0", "azure-mgmt-cdn": "3.1.0", "azure-mgmt-billing": "0.2.0", "azure-mgmt-batchai": "2.0.0", "azure-mgmt-batch": "5.0.1", "azure-mgmt-authorization": "0.50.0", "azure-mgmt-applicationinsights": "0.1.1", "azure-mgmt-advisor": "1.0.1", "azure-loganalytics": "0.1.0", "azure-kusto-ingest": "0.0.38", "azure-kusto-data": "0.0.38", "azure-keyvault": "1.1.0", "azure-graphrbac": "0.40.0", "azure-eventgrid": "1.3.0", "azure-datalake-store": "0.0.48", "azure-cosmosdb-table": "1.0.6", "azure-cosmosdb-nspkg": "2.0.2", "azure-common": "1.1.23", "azure-cli-telemetry": "1.0.4", "azure-cli-nspkg": "3.0.4", "azure-cli-core": "2.0.54", "azure-batch": "4.1.3", "azure-applicationinsights": "0.1.0", "automat": "0.7.0", "attrs": "18.2.0", "atomicwrites": "1.2.1", "astropy": "3.0.4", "astroid": "2.0.4", "astor": "0.8.0", "asn1crypto": "0.24.0", "arrow": "0.15.4", "argcomplete": "1.10.0", "applicationinsights": "0.11.9", "appdirs": "1.4.3", "antlr4-python3-runtime": "4.7.2", "ansiwrap": "0.8.4", "anaconda-project": "0.8.2", "anaconda-navigator": "1.9.2", "anaconda-client": "1.7.2", "altair": "3.2.0", "alabaster": "0.7.11", "adal": "1.2.2", "absl-py": "0.8.1"}
+2020-02-18 18:52:15,465 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Starting fit_pipeline]memory usage 780580
+2020-02-18 18:52:15,642 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Starting fit_pipeline]child memory usage 768536
+2020-02-18 18:52:15,720 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Starting fit_pipeline]cpu time 480.926915
+2020-02-18 18:52:15,784 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Starting fit_pipeline]child cpu time 34.139821
+2020-02-18 18:52:15,868 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107857920, swap memory: 0.
+2020-02-18 18:52:16,031 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2020-02-18 18:52:16,170 - INFO - 295 : Using child run AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1
+2020-02-18 18:52:16,278 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before preprocess]memory usage 780580
+2020-02-18 18:52:16,409 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before preprocess]child memory usage 768536
+2020-02-18 18:52:16,492 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before preprocess]cpu time 481.061066
+2020-02-18 18:52:16,589 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before preprocess]child cpu time 34.139821
+2020-02-18 18:52:16,681 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before executing pipeline]memory usage 780580
+2020-02-18 18:52:16,781 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before executing pipeline]child memory usage 768536
+2020-02-18 18:52:16,849 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before executing pipeline]cpu time 481.104086
+2020-02-18 18:52:16,969 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][Before executing pipeline]child cpu time 34.139821
+2020-02-18 18:52:17,052 - INFO - 295 : Start executing pipeline {"objects": [{"class_name": "MinMaxScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "RandomForestRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.006151578686713196, "min_samples_split": 0.010734188827013528, "n_estimators": 25}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "509be37c39972b34deee7a2fde5a747d91172465"}.
+2020-02-18 18:52:17,148 - INFO - 295 : Running with the following AutoML settings:
+ - name: my-third-experiment
+ - subscription_id: 055108ec-2785-464c-9375-6599cde5996d
+ - region: centralus
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 3
+ - primary_metric: spearman_correlation
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 25.0
+ - y_max: 346.0
+ - num_classes: None
+ - featurization: off
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 6
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'Prophet']
+ - supported_models: ['ElasticNet', 'GradientBoosting', 'DecisionTree', 'KNN', 'LassoLars', 'SGD', 'RandomForest', 'ExtremeRandomTrees', 'LightGBM', 'XGBoostRegressor', 'FastLinearRegressor', 'OnlineGradientDescentRegressor', 'TensorFlowLinearRegressor', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: False
+ - enable_stack_ensembling: False
+ - ensemble_iterations: None
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - label_column_name: None
+ - weight_column_name: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2020-02-18 18:52:17,296 - INFO - 295 : Component PrepareData finished after 0.03224426666666667 minutes.
+2020-02-18 18:52:17,375 - INFO - 295 : ActivityStarted: RunPipeline
+2020-02-18 18:52:17,710 - INFO - 295 : Limits set to mem_in_mb=None, wall_time_in_s=360, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-02-18 18:52:17,747 - INFO - 295 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fc2a0aed6a0>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-02-18 18:52:23,647 - INFO - 295 : memory usage 780580
+2020-02-18 18:52:23,678 - INFO - 295 : child memory usage 768536
+2020-02-18 18:52:23,781 - INFO - 295 : cpu time 481.495882
+2020-02-18 18:52:23,875 - INFO - 295 : child cpu time 34.139821
+2020-02-18 18:52:32,660 - INFO - 437 : ActivityStarted: Run
+2020-02-18 18:52:32,667 - INFO - 437 : ActivityStarted: RunCV
+2020-02-18 18:52:32,753 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:52:33,033 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=279.76[ms]
+2020-02-18 18:52:33,046 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:52:33,120 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:52:33,188 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=67.49[ms]
+2020-02-18 18:52:33,257 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:52:33,454 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=407.82[ms]
+2020-02-18 18:52:33,581 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:52:33,812 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=230.42[ms]
+2020-02-18 18:52:33,932 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:52:33,957 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:52:33,996 - INFO - 295 : memory usage 780580
+2020-02-18 18:52:34,045 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=87.9[ms]
+2020-02-18 18:52:34,107 - INFO - 295 : child memory usage 768536
+2020-02-18 18:52:34,193 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:52:34,267 - INFO - 295 : cpu time 481.638892
+2020-02-18 18:52:34,366 - INFO - 295 : child cpu time 34.139821
+2020-02-18 18:52:34,393 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=460.76[ms]
+2020-02-18 18:52:34,774 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:52:35,142 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=368.06[ms]
+2020-02-18 18:52:35,164 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:52:35,319 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:52:35,436 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=117.22[ms]
+2020-02-18 18:52:35,550 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:52:35,660 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=496.06[ms]
+2020-02-18 18:52:35,946 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:52:36,135 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=188.69[ms]
+2020-02-18 18:52:36,160 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:52:36,269 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:52:36,381 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=112.07[ms]
+2020-02-18 18:52:36,473 - INFO - 295 : Regression metrics debug: {'y_test': (70,), 'y_pred': (70,), 'sample_weight': None}
+2020-02-18 18:52:36,612 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=452.69[ms]
+2020-02-18 18:52:36,640 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:52:36,893 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=252.81[ms]
+2020-02-18 18:52:36,911 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:52:37,006 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:52:37,413 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=406.61[ms]
+2020-02-18 18:52:37,452 - INFO - 295 : Regression metrics debug: {'y_test': (70,), 'y_pred': (70,), 'sample_weight': None}
+2020-02-18 18:52:37,646 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=735.07[ms]
+2020-02-18 18:52:37,702 - INFO - 455 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=5034.96[ms]
+2020-02-18 18:52:37,784 - INFO - 437 : ActivityStarted: RunCVMean
+2020-02-18 18:52:37,921 - INFO - 455 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=136.97[ms]
+2020-02-18 18:52:38,380 - INFO - 455 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=5719.95[ms]
+2020-02-18 18:52:40,550 - INFO - 295 : Limits set to mem_in_mb=None, wall_time_in_s=360, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-02-18 18:52:40,571 - INFO - 295 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fc2a0aed6a0>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'NoneType'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'int'>, 'include_models': <class 'bool'>}
+2020-02-18 18:52:44,770 - INFO - 295 : memory usage 780580
+2020-02-18 18:52:44,793 - INFO - 295 : child memory usage 768536
+2020-02-18 18:52:44,861 - INFO - 295 : cpu time 481.93141
+2020-02-18 18:52:44,924 - INFO - 295 : child cpu time 50.505771
+2020-02-18 18:52:55,034 - INFO - 295 : memory usage 780580
+2020-02-18 18:52:55,070 - INFO - 295 : child memory usage 768536
+2020-02-18 18:52:55,209 - INFO - 295 : cpu time 482.050302
+2020-02-18 18:52:55,316 - INFO - 295 : child cpu time 50.505771
+2020-02-18 18:52:55,546 - INFO - 437 : ActivityStarted: Run
+2020-02-18 18:52:55,573 - INFO - 437 : ActivityStarted: TrainFull
+2020-02-18 18:52:55,709 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:52:56,009 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=300.03[ms]
+2020-02-18 18:52:56,029 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:52:56,139 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:52:56,268 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=129.07[ms]
+2020-02-18 18:52:56,373 - INFO - 295 : Regression metrics debug: {'y_test': (353,), 'y_pred': (353,), 'sample_weight': None}
+2020-02-18 18:52:56,560 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=530.86[ms]
+2020-02-18 18:52:56,618 - INFO - 455 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=1045.72[ms]
+2020-02-18 18:52:57,176 - INFO - 455 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=1629.44[ms]
+2020-02-18 18:52:59,529 - INFO - 295 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=42153.39[ms]
+2020-02-18 18:52:59,548 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][After executing pipeline]memory usage 780580
+2020-02-18 18:52:59,644 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][After executing pipeline]child memory usage 768536
+2020-02-18 18:52:59,728 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][After executing pipeline]cpu time 482.17082
+2020-02-18 18:52:59,834 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][After executing pipeline]child cpu time 65.57946
+2020-02-18 18:52:59,960 - INFO - 295 : Pipeline execution finished with a score of 0.6834836805626624
+2020-02-18 18:53:00,079 - INFO - 295 : Start logging metrics for child run.
+2020-02-18 18:53:00,143 - INFO - 295 : ActivityStarted: MetricsAndSaveModel
+2020-02-18 18:53:02,650 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2020-02-18 18:53:02,671 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2020-02-18 18:53:02,720 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2020-02-18 18:53:02,817 - INFO - 295 : run_id:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1, pipeline_id:509be37c39972b34deee7a2fde5a747d91172465,The following metrics have been logged for the child run: {'normalized_mean_absolute_error': 0.14284466147688324, 'mean_absolute_error': 45.853136334079515, 'predicted_true': <class 'dict'>, 'spearman_correlation': 0.6834836805626624, 'mean_absolute_percentage_error': 41.044125505221544, 'median_absolute_error': 41.40682539682539, 'explained_variance': 0.4912502321153963, 'normalized_root_mean_squared_log_error': 0.167276029650008, 'normalized_median_absolute_error': 0.12899322553528159, 'root_mean_squared_log_error': 0.43345037222624755, 'root_mean_squared_error': 56.385901208062606, 'normalized_root_mean_squared_error': 0.1756570131092293, 'residuals': <class 'dict'>, 'r2_score': 0.46768677559674304, 'train time': 0.4255284, 'fit_time': 0.1771548, 'predict_time': 0.2483736}.
+2020-02-18 18:53:05,419 - INFO - 295 : memory usage 780580
+2020-02-18 18:53:05,460 - INFO - 295 : child memory usage 768536
+2020-02-18 18:53:05,588 - INFO - 295 : cpu time 482.852679
+2020-02-18 18:53:05,739 - INFO - 295 : child cpu time 65.57946
+2020-02-18 18:53:06,129 - INFO - 295 : Component CompleteRun finished after 0.8461404 minutes.
+2020-02-18 18:53:06,151 - INFO - 295 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=6008.21[ms]
+2020-02-18 18:53:07,120 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][End fit_pipeline]memory usage 780580
+2020-02-18 18:53:07,138 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][End fit_pipeline]child memory usage 768536
+2020-02-18 18:53:07,219 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][End fit_pipeline]cpu time 483.24494
+2020-02-18 18:53:07,401 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_1][End fit_pipeline]child cpu time 65.57946
+2020-02-18 18:53:07,525 - INFO - 295 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=54406.6 [ms]
+2020-02-18 18:53:07,597 - INFO - 295 : Start iteration: 2
+2020-02-18 18:53:07,684 - INFO - 295 : ActivityStarted, FitIteration
+2020-02-18 18:53:07,758 - INFO - 295 : ActivityStarted, GetPipeline
+2020-02-18 18:53:07,905 - INFO - 295 : Querying Jasmine for next task.
+2020-02-18 18:53:08,934 - INFO - 295 : ActivityCompleted: Activity=GetPipeline, HowEnded=Success, Duration=1175.83 [ms]
+2020-02-18 18:53:08,950 - INFO - 295 : Received pipeline ID b4bd922dbaf8213366b177d822de2b50eb1fc58b
+2020-02-18 18:53:10,539 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107857920, swap memory: 0.
+2020-02-18 18:53:10,570 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2020-02-18 18:53:10,639 - INFO - 295 : All versions str:
+{"zope.interface": "4.5.0", "zict": "0.1.3", "xlwt": "1.3.0", "xlsxwriter": "1.1.1", "xlrd": "1.1.0", "wrapt": "1.11.2", "word2vec": "0.10.2", "widgetsnbextension": "3.5.1", "wheel": "0.30.0", "wget": "3.2", "werkzeug": "0.14.1", "websocket-client": "0.56.0", "webencodings": "0.5.1", "wcwidth": "0.1.7", "urllib3": "1.23", "update-checker": "0.16", "unicodecsv": "0.14.1", "typing": "3.7.4.1", "typing-extensions": "3.7.4.1", "typed-ast": "1.1.0", "twisted": "18.7.0", "tubes": "0.2.0", "treq": "18.6.0", "traittypes": "0.2.1", "traitlets": "4.3.2", "tqdm": "4.26.0", "tornado": "4.5.3", "torchvision": "0.4.2", "torch": "1.3.1", "toolz": "0.9.0", "theano": "1.0.4", "tf2onnx": "1.5.3", "tf-estimator-nightly": "1.14.0.dev2019060501", "textwrap3": "0.9.2", "textblob": "0.15.3", "testpath": "0.4.2", "terminado": "0.8.1", "termcolor": "1.1.0", "tensorflow": "2.0.0b1", "tensorboard": "2.0.1", "tenacity": "6.0.0", "tblib": "1.3.2", "tb-nightly": "1.14.0a20190603", "tabulate": "0.8.2", "tables": "3.4.4", "sympy": "1.3", "statsmodels": "0.9.0", "sqlalchemy": "1.2.14", "spyder": "3.3.1", "spyder-kernels": "0.2.6", "sphinxcontrib-websupport": "1.1.0", "sphinx": "1.8.1", "sortedcontainers": "2.0.5", "sortedcollections": "1.0.1", "snowballstemmer": "1.2.1", "snakeviz": "2.0.1", "smart-open": "1.9.0", "sklearn": "0.0", "sklearn-pandas": "1.7.0", "skl2onnx": "1.4.9", "six": "1.11.0", "singledispatch": "3.4.0.3", "simplegeneric": "0.8.1", "shap": "0.29.3", "setuptools": "41.6.0", "service-identity": "17.0.0", "send2trash": "1.5.0", "secretstorage": "3.1.0", "seaborn": "0.9.0", "scrubadub": "1.2.1", "scipy": "1.1.0", "scikit-learn": "0.20.3", "scikit-image": "0.16.2", "scikit-bio": "0.5.5", "s3transfer": "0.1.13", "ruamel.yaml": "0.15.89", "ruamel-yaml": "0.15.46", "rsa": "4.0", "rpy2": "3.0.5", "rope": "0.11.0", "retrying": "1.3.3", "resource": "0.2.1", "requests": "2.22.0", "requests-oauthlib": "1.3.0", "qtpy": "1.5.1", "qtconsole": "4.4.2", "qtawesome": "0.5.0", "pyzmq": "17.1.2", "pyyaml": "3.13", "pywavelets": "1.0.1", "pyviz-comms": "0.6.0", "pytz": "2019.3", "python-easyconfig": "0.1.7", "python-dateutil": "2.8.1", "python-daemon": "2.1.2", "pytest": "3.8.2", "pytest-remotedata": "0.3.0", "pytest-openfiles": "0.3.0", "pytest-doctestplus": "0.1.3", "pytest-astropy": "0.4.0", "pytest-arraydiff": "0.2", "pyspark": "2.4.4", "pysocks": "1.6.8", "pyprof2calltree": "1.4.4", "pyparsing": "2.3.0", "pypachy": "0.1.5", "pyopenssl": "18.0.0", "pyodbc": "3.1.1", "pynacl": "1.3.0", "pymysql": "0.9.2", "pymssql": "2.1.1", "pympler": "0.7", "pymongo": "3.7.1", "pymc3": "3.7", "pymc": "2.3.6", "pylint": "2.1.1", "pykafka": "2.8.0", "pyjwt": "1.7.1", "pyhamcrest": "1.9.0", "pygments": "2.2.0", "pyglet": "1.3.2", "pygithub": "1.44.1", "pyflakes": "2.0.0", "pydot": "1.4.1", "pycurl": "7.43.0.2", "pycrypto": "2.6.1", "pycparser": "2.19", "pycosat": "0.6.3", "pycodestyle": "2.4.0", "pyasn1": "0.4.4", "pyasn1-modules": "0.2.2", "pyarrow": "0.13.0", "pyang": "2.1", "py4j": "0.10.7", "py": "1.6.0", "ptyprocess": "0.6.0", "psycopg2": "2.7.5", "psutil": "5.4.7", "protobuf": "3.10.0", "prompt-toolkit": "2.0.7", "prometheus-client": "0.4.2", "prettytable": "0.7.2", "prettypandas": "0.0.4", "portalocker": "1.5.1", "pmdarima": "1.1.1", "ply": "3.11", "pluggy": "0.7.1", "plotly": "4.2.1", "pkginfo": "1.4.2", "pip": "19.3.1", "pillow": "5.3.0", "pickleshare": "0.7.5", "phonenumbers": "8.10.22", "pexpect": "4.6.0", "pep8": "1.7.1", "pbr": "4.2.0", "patsy": "0.5.1", "pathspec": "0.6.0", "pathlib2": "2.3.2", "path.py": "11.1.0", "partd": "0.3.8", "parso": "0.3.1", "paramiko": "2.6.0", "param": "1.7.0", "papermill": "1.2.1", "pandocfilters": "1.4.2", "pandasql": "0.7.3", "pandas": "0.23.4", "packaging": "18.0", "openpyxl": "2.5.8", "openfst": "1.6.1", "onnxruntime": "1.0.0", "onnxmltools": "1.6.0", "onnxconverter-common": "1.6.0", "onnx": "1.6.0", "olefile": "0.46", "okpy": "1.13.11", "odo": "0.5.1", "oauthlib": "3.1.0", "numpydoc": "0.8.0", "numpy": "1.16.2", "numexpr": "2.6.8", "numba": "0.40.0", "notebook": "5.7.2", "nose": "1.3.7", "nltk": "3.3", "nimbusml": "1.5.0", "networkx": "2.2", "ndg-httpsclient": "0.5.1", "nbformat": "4.4.0", "nbconvert": "5.6.1", "navigator-updater": "0.2.1", "natsort": "5.4.0", "multipledispatch": "0.6.0", "multimethods": "1.0.0", "msrestazure": "0.6.2", "msrest": "0.6.10", "msgpack": "0.5.6", "mpmath": "1.0.0", "more-itertools": "4.3.0", "mock": "2.0.0", "mkl-random": "1.0.1", "mkl-fft": "1.0.6", "mistune": "0.8.4", "memory-profiler": "0.56.0", "mccabe": "0.6.1", "matplotlib": "3.0.0", "markupsafe": "1.1.0", "markdown": "3.0.1", "lxml": "4.2.5", "luigi": "2.8.2", "lockfile": "0.12.2", "locket": "0.2.0", "llvmlite": "0.25.0", "line-profiler": "2.1.2", "lightgbm": "2.3.0", "libarchive-c": "2.8", "liac-arff": "2.4.0", "lazy-object-proxy": "1.3.1", "lancet-ioam": "0.9.0", "kqlmagic": "0.1.107.post1", "knack": "0.5.1", "klein": "19.6.0", "kiwisolver": "1.0.1", "keyring": "13.2.1", "keras2onnx": "1.6.0", "keras": "2.3.1", "keras-preprocessing": "1.1.0", "keras-applications": "1.0.8", "kazoo": "2.5.0", "kafka-python": "1.4.7", "jupyterlab": "0.34.12", "jupyterlab-launcher": "0.13.1", "jupyter": "1.0.0", "jupyter-core": "4.4.0", "jupyter-console": "6.0.0", "jupyter-client": "5.2.3", "jsonsir": "0.0.2", "jsonschema": "2.6.0", "jsonpickle": "1.2", "jsonform": "0.0.2", "json-logging-py": "0.2", "joblib": "0.14.0", "jmespath": "0.9.4", "jinja2": "2.10", "jeepney": "0.4", "jedi": "0.13.1", "jdcal": "1.4", "itsdangerous": "0.24", "isort": "4.3.4", "isodate": "0.6.0", "ipywidgets": "7.5.1", "ipython": "7.1.1", "ipython-genutils": "0.2.0", "ipykernel": "5.1.3", "interpret-core": "0.1.18", "interpret-community": "0.1.0.3.2", "incremental": "17.5.0", "imagesize": "1.1.0", "imageio": "2.4.1", "idna": "2.7", "hyperlink": "18.0.0", "humanfriendly": "4.18", "html5lib": "0.9999999", "holoviews": "1.10.7", "heapdict": "1.0.0", "hdmedians": "0.13", "h5py": "2.8.0", "gym": "0.15.3", "gunicorn": "19.9.0", "grpcio": "1.25.0", "greenlet": "0.4.15", "graphviz": "0.13.2", "google-pasta": "0.1.8", "google-auth": "1.7.0", "google-auth-oauthlib": "0.4.1", "gmpy2": "2.0.8", "glob2": "0.6", "ggplot": "0.11.5", "gevent": "1.3.6", "gensim": "3.8.1", "gdal": "2.3.0", "gast": "0.3.2", "futures": "3.1.1", "future": "0.16.0", "fusepy": "3.0.1", "ftfy": "5.3.0", "folium": "0.2.1", "flask": "1.0.3", "flask-cors": "3.0.6", "fire": "0.2.1", "filelock": "3.0.8", "feedparser": "5.2.1", "fastcache": "1.0.2", "et-xmlfile": "1.0.1", "entrypoints": "0.2.3", "elasticsearch": "7.0.5", "edward": "1.3.5", "dotnetcore2": "2.1.10", "dora": "0.0.2", "docutils": "0.14", "docopt": "0.6.2", "docker": "4.1.0", "docker-pycreds": "0.4.0", "docker-py": "1.10.6", "distro": "1.4.0", "distributed": "1.23.3", "dill": "0.3.1.1", "deprecated": "1.2.6", "defusedxml": "0.5.0", "decorator": "4.3.0", "datashape": "0.5.4", "datascience": "0.10.6", "datacleaner": "0.1.5", "dask": "0.19.3", "cytoolz": "0.9.0.1", "cython": "0.29.14", "cycler": "0.10.0", "cryptography": "2.3.1", "coveralls": "0.5", "coverage": "3.7.1", "contextlib2": "0.5.5", "constantly": "15.1.0", "configparser": "3.7.4", "conda": "4.5.11", "conda-build": "3.16.0", "colorama": "0.3.9", "cntk": "2.5.1", "clyent": "1.2.2", "cloudpickle": "1.2.2", "click": "7.0", "chardet": "3.0.4", "characteristic": "14.3.0", "cffi": "1.11.5", "certifi": "2018.10.15", "cachetools": "3.1.1", "cachecontrol": "0.12.5", "bz2file": "0.98", "brewer2mpl": "1.4.1", "bqplot": "0.12.0", "bottleneck": "1.2.1", "botocore": "1.8.50", "boto3": "1.4.8", "boto": "2.49.0", "bokeh": "0.13.0", "bleach": "1.5.0", "blaze": "0.11.3", "bkcharts": "0.2", "bitarray": "0.8.3", "beautifulsoup4": "4.6.3", "beautifier": "0.5.5", "bcrypt": "3.1.7", "backports.weakref": "1.0rc1", "backports.tempfile": "1.0", "backports.shutil-get-terminal-size": "1.0.0", "backcall": "0.1.0", "babel": "2.6.0", "azureml-widgets": "1.0.72", "azureml-train": "1.0.72", "azureml-train-restclients-hyperdrive": "1.0.72", "azureml-train-core": "1.0.72", "azureml-train-automl": "1.0.72", "azureml-telemetry": "1.0.72", "azureml-sdk": "1.0.72", "azureml-pipeline": "1.0.72", "azureml-pipeline-steps": "1.0.72", "azureml-pipeline-core": "1.0.72", "azureml-opendatasets": "1.0.72.1", "azureml-model-management-sdk": "1.0.1b6.post1", "azureml-interpret": "1.0.72.1", "azureml-explain-model": "1.0.72", "azureml-defaults": "1.0.72", "azureml-dataprep": "1.1.30", "azureml-dataprep-native": "13.1.0", "azureml-core": "1.0.72", "azureml-contrib-notebook": "1.0.72", "azureml-automl-core": "1.0.72.1", "azure": "4.0.0", "azure-storage-queue": "2.1.0", "azure-storage-file": "1.4.0", "azure-storage-common": "2.1.0", "azure-storage-blob": "2.1.0", "azure-servicemanagement-legacy": "0.20.6", "azure-servicefabric": "6.3.0.0", "azure-servicebus": "0.21.1", "azure-nspkg": "3.0.2", "azure-mgmt": "4.0.0", "azure-mgmt-web": "0.35.0", "azure-mgmt-trafficmanager": "0.50.0", "azure-mgmt-subscription": "0.2.0", "azure-mgmt-storage": "2.0.0", "azure-mgmt-sql": "0.9.1", "azure-mgmt-signalr": "0.1.1", "azure-mgmt-servicefabric": "0.2.0", "azure-mgmt-servicebus": "0.5.3", "azure-mgmt-search": "2.1.0", "azure-mgmt-scheduler": "2.0.0", "azure-mgmt-resource": "2.0.0", "azure-mgmt-reservations": "0.2.1", "azure-mgmt-relay": "0.1.0", "azure-mgmt-redis": "5.0.0", "azure-mgmt-recoveryservicesbackup": "0.3.0", "azure-mgmt-recoveryservices": "0.3.0", "azure-mgmt-rdbms": "1.9.0", "azure-mgmt-powerbiembedded": "2.0.0", "azure-mgmt-policyinsights": "0.1.0", "azure-mgmt-nspkg": "3.0.2", "azure-mgmt-notificationhubs": "2.1.0", "azure-mgmt-network": "2.7.0", "azure-mgmt-msi": "0.2.0", "azure-mgmt-monitor": "0.5.2", "azure-mgmt-media": "1.0.0", "azure-mgmt-marketplaceordering": "0.1.0", "azure-mgmt-maps": "0.1.0", "azure-mgmt-managementpartner": "0.1.1", "azure-mgmt-managementgroups": "0.1.0", "azure-mgmt-machinelearningcompute": "0.4.1", "azure-mgmt-logic": "3.0.0", "azure-mgmt-loganalytics": "0.2.0", "azure-mgmt-keyvault": "1.1.0", "azure-mgmt-iothubprovisioningservices": "0.2.0", "azure-mgmt-iothub": "0.5.0", "azure-mgmt-iotcentral": "0.1.0", "azure-mgmt-hanaonazure": "0.1.1", "azure-mgmt-eventhub": "2.6.0", "azure-mgmt-eventgrid": "1.0.0", "azure-mgmt-dns": "2.1.0", "azure-mgmt-devtestlabs": "2.2.0", "azure-mgmt-devspaces": "0.1.0", "azure-mgmt-datamigration": "1.0.0", "azure-mgmt-datalake-store": "0.5.0", "azure-mgmt-datalake-nspkg": "3.0.1", "azure-mgmt-datalake-analytics": "0.6.0", "azure-mgmt-datafactory": "0.6.0", "azure-mgmt-cosmosdb": "0.4.1", "azure-mgmt-containerservice": "4.4.0", "azure-mgmt-containerregistry": "2.8.0", "azure-mgmt-containerinstance": "1.5.0", "azure-mgmt-consumption": "2.0.0", "azure-mgmt-compute": "4.6.2", "azure-mgmt-commerce": "1.0.1", "azure-mgmt-cognitiveservices": "3.0.0", "azure-mgmt-cdn": "3.1.0", "azure-mgmt-billing": "0.2.0", "azure-mgmt-batchai": "2.0.0", "azure-mgmt-batch": "5.0.1", "azure-mgmt-authorization": "0.50.0", "azure-mgmt-applicationinsights": "0.1.1", "azure-mgmt-advisor": "1.0.1", "azure-loganalytics": "0.1.0", "azure-kusto-ingest": "0.0.38", "azure-kusto-data": "0.0.38", "azure-keyvault": "1.1.0", "azure-graphrbac": "0.40.0", "azure-eventgrid": "1.3.0", "azure-datalake-store": "0.0.48", "azure-cosmosdb-table": "1.0.6", "azure-cosmosdb-nspkg": "2.0.2", "azure-common": "1.1.23", "azure-cli-telemetry": "1.0.4", "azure-cli-nspkg": "3.0.4", "azure-cli-core": "2.0.54", "azure-batch": "4.1.3", "azure-applicationinsights": "0.1.0", "automat": "0.7.0", "attrs": "18.2.0", "atomicwrites": "1.2.1", "astropy": "3.0.4", "astroid": "2.0.4", "astor": "0.8.0", "asn1crypto": "0.24.0", "arrow": "0.15.4", "argcomplete": "1.10.0", "applicationinsights": "0.11.9", "appdirs": "1.4.3", "antlr4-python3-runtime": "4.7.2", "ansiwrap": "0.8.4", "anaconda-project": "0.8.2", "anaconda-navigator": "1.9.2", "anaconda-client": "1.7.2", "altair": "3.2.0", "alabaster": "0.7.11", "adal": "1.2.2", "absl-py": "0.8.1"}
+2020-02-18 18:53:10,749 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Starting fit_pipeline]memory usage 780580
+2020-02-18 18:53:10,915 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Starting fit_pipeline]child memory usage 768536
+2020-02-18 18:53:11,012 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Starting fit_pipeline]cpu time 483.758222
+2020-02-18 18:53:11,092 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Starting fit_pipeline]child cpu time 65.57946
+2020-02-18 18:53:11,190 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2]CPU logical cores: 2, CPU cores: 2, virtual memory: 4107857920, swap memory: 0.
+2020-02-18 18:53:11,278 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2]Platform information: Linux-4.14.29-linuxkit-x86_64-with-debian-stretch-sid.
+2020-02-18 18:53:11,378 - INFO - 295 : Using child run AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2
+2020-02-18 18:53:11,453 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before preprocess]memory usage 780580
+2020-02-18 18:53:11,506 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before preprocess]child memory usage 768536
+2020-02-18 18:53:11,601 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before preprocess]cpu time 483.903057
+2020-02-18 18:53:11,665 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before preprocess]child cpu time 65.57946
+2020-02-18 18:53:11,725 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before executing pipeline]memory usage 780580
+2020-02-18 18:53:11,794 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before executing pipeline]child memory usage 768536
+2020-02-18 18:53:11,899 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before executing pipeline]cpu time 483.947118
+2020-02-18 18:53:11,991 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][Before executing pipeline]child cpu time 65.57946
+2020-02-18 18:53:12,087 - INFO - 295 : Start executing pipeline {"objects": [{"class_name": "StandardScaler", "module": "sklearn.preprocessing", "param_args": [], "param_kwargs": {"with_mean": false, "with_std": false}, "prepared_kwargs": {}, "spec_class": "preproc"}, {"class_name": "ExtraTreesRegressor", "module": "sklearn.ensemble", "param_args": [], "param_kwargs": {"bootstrap": true, "criterion": "mse", "max_features": 0.9, "min_samples_leaf": 0.0023646822772690063, "min_samples_split": 0.052853885930792446, "n_estimators": 10}, "prepared_kwargs": {}, "spec_class": "sklearn"}], "pipeline_id": "b4bd922dbaf8213366b177d822de2b50eb1fc58b"}.
+2020-02-18 18:53:12,172 - INFO - 295 : Running with the following AutoML settings:
+ - name: my-third-experiment
+ - subscription_id: 055108ec-2785-464c-9375-6599cde5996d
+ - region: centralus
+ - spark_context: None
+ - spark_service: None
+ - azure_service: None
+ - iterations: 3
+ - primary_metric: spearman_correlation
+ - task_type: regression
+ - validation_size: 0.0
+ - n_cross_validations: 5
+ - y_min: 25.0
+ - y_max: 346.0
+ - num_classes: None
+ - featurization: off
+ - preprocess: False
+ - lag_length: 0
+ - is_timeseries: False
+ - max_cores_per_iteration: 1
+ - max_concurrent_iterations: 1
+ - iteration_timeout_minutes: 6
+ - mem_in_mb: None
+ - enforce_time_on_windows: False
+ - experiment_timeout_minutes: None
+ - experiment_exit_score: None
+ - whitelist_models: None
+ - blacklist_algos: ['XGBoostRegressor', 'Prophet']
+ - supported_models: ['ElasticNet', 'GradientBoosting', 'DecisionTree', 'KNN', 'LassoLars', 'SGD', 'RandomForest', 'ExtremeRandomTrees', 'LightGBM', 'XGBoostRegressor', 'FastLinearRegressor', 'OnlineGradientDescentRegressor', 'TensorFlowLinearRegressor', 'TensorFlowDNN']
+ - auto_blacklist: True
+ - blacklist_samples_reached: False
+ - exclude_nan_labels: True
+ - verbosity: 20
+ - show_warnings: False
+ - model_explainability: False
+ - service_url: None
+ - sdk_url: None
+ - sdk_packages: None
+ - enable_onnx_compatible_models: False
+ - enable_split_onnx_featurizer_estimator_models: False
+ - vm_type: None
+ - telemetry_verbosity: INFO
+ - send_telemetry: True
+ - enable_dnn: False
+ - enable_feature_sweeping: True
+ - enable_early_stopping: False
+ - early_stopping_n_iters: 10
+ - metrics: None
+ - enable_ensembling: False
+ - enable_stack_ensembling: False
+ - ensemble_iterations: None
+ - enable_tf: False
+ - enable_cache: True
+ - enable_subsampling: False
+ - subsample_seed: None
+ - enable_nimbusml: False
+ - enable_streaming: False
+ - label_column_name: None
+ - weight_column_name: None
+ - cost_mode: 0
+ - metric_operation: maximize
+2020-02-18 18:53:12,305 - INFO - 295 : Component PrepareData finished after 0.02779731666666667 minutes.
+2020-02-18 18:53:12,401 - INFO - 295 : ActivityStarted: RunPipeline
+2020-02-18 18:53:12,733 - INFO - 295 : Limits set to mem_in_mb=None, wall_time_in_s=360, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-02-18 18:53:12,746 - INFO - 295 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fc2a0b112e8>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'float'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'NoneType'>, 'include_models': <class 'bool'>}
+2020-02-18 18:53:15,955 - INFO - 295 : memory usage 780580
+2020-02-18 18:53:16,019 - INFO - 295 : child memory usage 768536
+2020-02-18 18:53:16,120 - INFO - 295 : cpu time 484.233203
+2020-02-18 18:53:16,215 - INFO - 295 : child cpu time 65.57946
+2020-02-18 18:53:26,297 - INFO - 295 : memory usage 780580
+2020-02-18 18:53:26,328 - INFO - 295 : child memory usage 768536
+2020-02-18 18:53:26,450 - INFO - 295 : cpu time 484.395213
+2020-02-18 18:53:26,695 - INFO - 295 : child cpu time 65.57946
+2020-02-18 18:53:27,307 - INFO - 437 : ActivityStarted: Run
+2020-02-18 18:53:27,387 - INFO - 437 : ActivityStarted: RunCV
+2020-02-18 18:53:27,413 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:53:27,567 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=154.09[ms]
+2020-02-18 18:53:27,649 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:53:27,744 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:53:27,806 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=61.91[ms]
+2020-02-18 18:53:27,902 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:53:28,063 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=414.02[ms]
+2020-02-18 18:53:28,167 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:53:28,305 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=137.57[ms]
+2020-02-18 18:53:28,529 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:53:28,557 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:53:28,644 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=87.45[ms]
+2020-02-18 18:53:28,722 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:53:28,847 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=318.48[ms]
+2020-02-18 18:53:28,907 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:53:29,028 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=120.8[ms]
+2020-02-18 18:53:29,085 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:53:29,210 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:53:29,327 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=117.03[ms]
+2020-02-18 18:53:29,389 - INFO - 295 : Regression metrics debug: {'y_test': (71,), 'y_pred': (71,), 'sample_weight': None}
+2020-02-18 18:53:29,516 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=430.44[ms]
+2020-02-18 18:53:29,699 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:53:29,750 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=45.03[ms]
+2020-02-18 18:53:29,873 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:53:29,932 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:53:30,024 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=91.89[ms]
+2020-02-18 18:53:30,137 - INFO - 295 : Regression metrics debug: {'y_test': (70,), 'y_pred': (70,), 'sample_weight': None}
+2020-02-18 18:53:30,233 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=359.94[ms]
+2020-02-18 18:53:30,325 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:53:30,468 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=143.47[ms]
+2020-02-18 18:53:30,517 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:53:30,609 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:53:31,269 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=659.89[ms]
+2020-02-18 18:53:31,307 - INFO - 295 : Regression metrics debug: {'y_test': (70,), 'y_pred': (70,), 'sample_weight': None}
+2020-02-18 18:53:31,560 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=1033.92[ms]
+2020-02-18 18:53:31,605 - INFO - 455 : ActivityCompleted: Activity=RunCV, HowEnded=Success, Duration=4217.68[ms]
+2020-02-18 18:53:31,662 - INFO - 437 : ActivityStarted: RunCVMean
+2020-02-18 18:53:31,811 - INFO - 455 : ActivityCompleted: Activity=RunCVMean, HowEnded=Success, Duration=148.37[ms]
+2020-02-18 18:53:32,216 - INFO - 455 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=4909.27[ms]
+2020-02-18 18:53:34,079 - INFO - 295 : Limits set to mem_in_mb=None, wall_time_in_s=360, total_wall_time_in_s=31449600, cpu_time_in_s=None, num_processes=None, grace_period_in_s=None, 
+2020-02-18 18:53:34,103 - INFO - 295 : Calling function <bound method ClientRunner._run of <automl.client.core.runtime.runner.ClientRunner object at 0x7fc2a0b112e8>> with argument types: [<class 'automl.client.core.runtime.datasets.ClientDatasets'>, <class 'automl.client.core.runtime.pipeline_spec.PipelineSpec'>, <class 'automl.client.core.runtime.problem_info.ProblemInfo'>], {'sets_to_run': <class 'list'>, 'subsample_percent': <class 'NoneType'>, 'random_state': <class 'NoneType'>, 'subsample_seed': <class 'int'>, 'include_models': <class 'bool'>}
+2020-02-18 18:53:36,775 - INFO - 295 : memory usage 780580
+2020-02-18 18:53:36,832 - INFO - 295 : child memory usage 768536
+2020-02-18 18:53:36,986 - INFO - 295 : cpu time 484.589505
+2020-02-18 18:53:37,105 - INFO - 295 : child cpu time 80.63955
+2020-02-18 18:53:47,188 - INFO - 295 : memory usage 780580
+2020-02-18 18:53:47,215 - INFO - 295 : child memory usage 768536
+2020-02-18 18:53:47,352 - INFO - 295 : cpu time 484.705661
+2020-02-18 18:53:47,442 - INFO - 295 : child cpu time 80.63955
+2020-02-18 18:53:48,785 - INFO - 437 : ActivityStarted: Run
+2020-02-18 18:53:48,793 - INFO - 437 : ActivityStarted: TrainFull
+2020-02-18 18:53:48,870 - INFO - 437 : ActivityStarted: TimeFit
+2020-02-18 18:53:49,000 - INFO - 455 : ActivityCompleted: Activity=TimeFit, HowEnded=Success, Duration=129.64[ms]
+2020-02-18 18:53:49,064 - INFO - 437 : ActivityStarted: ComputeMetrics
+2020-02-18 18:53:49,222 - INFO - 437 : ActivityStarted: Predict
+2020-02-18 18:53:49,331 - INFO - 455 : ActivityCompleted: Activity=Predict, HowEnded=Success, Duration=108.71[ms]
+2020-02-18 18:53:49,395 - INFO - 295 : Regression metrics debug: {'y_test': (353,), 'y_pred': (353,), 'sample_weight': None}
+2020-02-18 18:53:49,544 - INFO - 455 : ActivityCompleted: Activity=ComputeMetrics, HowEnded=Success, Duration=472.25[ms]
+2020-02-18 18:53:49,588 - INFO - 455 : ActivityCompleted: Activity=TrainFull, HowEnded=Success, Duration=795.23[ms]
+2020-02-18 18:53:50,058 - INFO - 455 : ActivityCompleted: Activity=Run, HowEnded=Success, Duration=1273.79[ms]
+2020-02-18 18:53:52,008 - INFO - 295 : ActivityCompleted: Activity=RunPipeline, HowEnded=Success, Duration=39607.05[ms]
+2020-02-18 18:53:52,027 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][After executing pipeline]memory usage 780580
+2020-02-18 18:53:52,101 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][After executing pipeline]child memory usage 768536
+2020-02-18 18:53:52,155 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][After executing pipeline]cpu time 484.835641
+2020-02-18 18:53:52,231 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][After executing pipeline]child cpu time 94.483054
+2020-02-18 18:53:52,306 - INFO - 295 : Pipeline execution finished with a score of 0.6949949496569128
+2020-02-18 18:53:52,409 - INFO - 295 : Start logging metrics for child run.
+2020-02-18 18:53:52,528 - INFO - 295 : ActivityStarted: MetricsAndSaveModel
+2020-02-18 18:53:54,742 - WARNING - 295 : Did not recognize metric: fit_time. Will not log.
+2020-02-18 18:53:54,792 - WARNING - 295 : Did not recognize metric: train time. Will not log.
+2020-02-18 18:53:54,893 - WARNING - 295 : Did not recognize metric: predict_time. Will not log.
+2020-02-18 18:53:54,993 - INFO - 295 : run_id:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2, pipeline_id:b4bd922dbaf8213366b177d822de2b50eb1fc58b,The following metrics have been logged for the child run: {'normalized_mean_absolute_error': 0.14288976000122566, 'mean_absolute_error': 45.86761296039344, 'predicted_true': <class 'dict'>, 'spearman_correlation': 0.6949949496569128, 'mean_absolute_percentage_error': 42.00784687054391, 'median_absolute_error': 42.244181297387875, 'explained_variance': 0.5025620650479337, 'normalized_root_mean_squared_log_error': 0.16619595696714456, 'normalized_median_absolute_error': 0.13160181089528933, 'root_mean_squared_log_error': 0.43065165738707967, 'root_mean_squared_error': 55.20953832520545, 'normalized_root_mean_squared_error': 0.1719923312311696, 'residuals': <class 'dict'>, 'r2_score': 0.48934810801797707, 'fit_time': 0.0353522, 'train time': 0.3165902, 'predict_time': 0.281238}.
+2020-02-18 18:53:55,923 - INFO - 295 : Component CompleteRun finished after 0.7547634999999999 minutes.
+2020-02-18 18:53:55,947 - INFO - 295 : ActivityCompleted: Activity=MetricsAndSaveModel, HowEnded=Success, Duration=3418.21[ms]
+2020-02-18 18:53:56,948 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][End fit_pipeline]memory usage 780580
+2020-02-18 18:53:56,964 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][End fit_pipeline]child memory usage 768536
+2020-02-18 18:53:57,063 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][End fit_pipeline]cpu time 485.875543
+2020-02-18 18:53:57,139 - INFO - 295 : [RunId:AutoML_f8c936f2-80b5-4bcb-a4b3-ba12f6ef0400_2][End fit_pipeline]child cpu time 94.483054
+2020-02-18 18:53:57,243 - INFO - 295 : ActivityCompleted: Activity=FitIteration, HowEnded=Success, Duration=49546.15 [ms]
+2020-02-18 18:53:57,517 - INFO - 295 : memory usage 780580
+2020-02-18 18:53:57,537 - INFO - 295 : child memory usage 768536
+2020-02-18 18:53:57,624 - INFO - 295 : cpu time 486.063998
+2020-02-18 18:53:57,751 - INFO - 295 : child cpu time 94.483054
+2020-02-18 18:53:58,636 - INFO - 295 : Stopping usage telemetry collection
+2020-02-18 18:53:58,662 - INFO - 295 : Run Complete.
+2020-02-18 18:54:36,574 - WARNING - 295 : XGBoost is included in recommended algorithms list but not installed locally. If you would like to include XGBoost models in the recommended algorithms please install XGBoost locally. Adding XGBoost to the blacklist.
